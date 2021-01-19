@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OAuth Tutorials</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    ul {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    .navbar {
+      background-color: #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      padding: 10px;
+    }
+    .navbar_items {
+      display: flex;
+      padding: 10px;
+    }
+    .item {
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid #fff;
+      width: 70px;
+      text-align: center;
+    }
+    .item a {
+      font-weight: bold;
+      color: #fff;
+    }
+    .item:hover {
+      background-color: #fff5;
+    }
+    .username {
+      color: coral;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="navbar_items">
+      <li class="item"><a href="/logout">Logout</a></li>
+    </ul>
+    <div>
+      <strong>
+        Username: <span class="username"><%= user.username%></span>
+        <br>
+        Provider: <span class="username"><%= user.providerName%></span>
+      </strong>
+    </div>
+  </nav>
+</body>
+</html>

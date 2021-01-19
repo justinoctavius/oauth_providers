@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    a {
+      text-decoration: none;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+    }
+    .provider {
+      border: solid 1px black;
+      padding: 10px;
+      width: 250px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .btn {
+      border: solid 1px black;
+      padding: 10px;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+    }
+    .btn-google {
+      background-color: #ea4335;
+      color: #fff;
+    }
+    .btn-google:hover {
+      background-color: #b6382d;
+    }
+    .btn-facebook {
+      background-color: #3b5998;
+      color: #fff;
+    }
+    .btn-facebook:hover {
+      background-color: #324c85;
+    }
+    .btn-local {
+      background-color: #fff;
+      color: black;
+    }
+    .btn-local:hover {
+      background-color: #eee;
+    }
+    .btn-github {
+      background-color: #eee;
+      color: black;
+    }
+    .btn-github:hover {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="provider">
+    <h1>Login with</h1>
+    <a class="btn btn-google" href="/auth/google">Google+</a>
+    <a class="btn btn-facebook" href="/auth/facebook">Facebook</a>
+    <a class="btn btn-github" href="/auth/github">Github</a>
+    <a class="btn btn-local" href="/auth/local-login">Local</a>
+  </div>
+</body>
+</html>

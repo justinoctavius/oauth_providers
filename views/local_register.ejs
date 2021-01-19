@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Local</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+    }
+    .form-control {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      border: solid 1px black;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .form-control input {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .error {
+      color: brown;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <form name="form" id="form">
+    <div class="form-control">
+      <h1>Register</h1>
+      <input type="text" name="username" id="username" placeholder="Username">
+      <input type="email" name="email" id="email" placeholder="Email">
+      <input type="password" name="password" id="password" placeholder="Password">
+      <input type="submit" value="Send" id="btn-submit" />
+      <small class="error" id="error"></small>
+      <a href="/auth/local-login">Already register? Click here</a>
+    </div>
+  </form>
+
+  <script>
+    const btn = document.getElementById('btn-submit');
+    const error = document.getElementById('error')
+    btn.addEventListener('click', (e) => {
+      e.preventDefault()
+      const user = {
+        username: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      }
+      fetch('http://localhost:3000/auth/local-register', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(user)
+      })
+      .then((res) => res.json())
+      .then(res => error.innerHTML = res.msg)
+      .catch(err => console.log(err))
+    })
+  </script>
+</body>
+</html>
