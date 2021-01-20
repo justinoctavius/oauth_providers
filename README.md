@@ -1,4 +1,4 @@
-#database used is 'MONGODB' and the 'ORM' mongoose
+This application has been created for login with commons auth providers for education purpose 
 
 NPM SCRIPT
   npm run dev #'to start the server in dev mode'
